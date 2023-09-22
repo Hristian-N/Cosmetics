@@ -13,15 +13,15 @@ namespace Cosmetics.Tests.Helpers
 {
     public class TestHelpers
     {
-		/// <summary>
-		/// Returns a new List with size equal to wantedSize.
-		/// Useful when you do not care what the contents of the List are,
-		/// for example when testing if a list of a command throws exception
-		/// when it's parameters list's size is less/more than expected.
-		/// </summary>
-		/// <param name="wantedSize">the size of the List to be returned</param>
-		/// <returns>a new List with size equal to wantedSize</returns>
-		public static List<string> InitializeListWithSize(int wantedSize)
+        /// <summary>
+        /// Returns a new List with size equal to wantedSize.
+        /// Useful when you do not care what the contents of the List are,
+        /// for example when testing if a list of a command throws exception
+        /// when it's parameters list's size is less/more than expected.
+        /// </summary>
+        /// <param name="wantedSize">the size of the List to be returned</param>
+        /// <returns>a new List with size equal to wantedSize</returns>
+        public static List<string> InitializeListWithSize(int wantedSize)
         {
             return new string[wantedSize].ToList();
         }
@@ -36,23 +36,23 @@ namespace Cosmetics.Tests.Helpers
             return new Category(TestData.CategoryData.ValidName);
         }
 
-        public static IProduct InitializeTestProduct()
+        public static Product InitializeTestProduct()
         {
-			return new Shampoo(
-				ShampooData.ValidName,
-				ShampooData.ValidBrand,
-				10m,
-				GenderType.Unisex,
-				100,
-				UsageType.EveryDay);
-		}
+            return new Shampoo(
+                ShampooData.ValidName,
+                ShampooData.ValidBrand,
+                10m,
+                GenderType.Unisex,
+                100,
+                UsageType.EveryDay);
+        }
         public static ICategory AddInitializedCategoryToRepo(IRepository repository)
         {
             repository.CreateCategory(CategoryData.ValidName);
             return repository.FindCategoryByName(CategoryData.ValidName);
         }
 
-        public static IProduct AddInitializedProductToRepo(IRepository repository)
+        public static Product AddInitializedProductToRepo(IRepository repository)
         {
             repository.CreateShampoo(
                 ShampooData.ValidName,

@@ -17,7 +17,7 @@ namespace Cosmetics.Commands
         public override string Execute()
         {
             ValidationHelper.ValidateArgumentsCount(this.CommandParameters, ExpectedNumberOfArguments);
-            
+
             string productToRemove = this.CommandParameters[0];
 
             return RemoveFromShoppingCart(productToRemove);
@@ -26,7 +26,7 @@ namespace Cosmetics.Commands
         private string RemoveFromShoppingCart(string productName)
         {
             IShoppingCart shoppingCart = this.Repository.ShoppingCart;
-            IProduct product = this.Repository.FindProductByName(productName);
+            Product product = this.Repository.FindProductByName(productName);
 
             shoppingCart.RemoveProduct(product);
 

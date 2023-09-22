@@ -26,7 +26,7 @@ namespace Cosmetics.Commands
         private string AddToShoppingCart(string productName)
         {
             IShoppingCart shoppingCart = this.Repository.ShoppingCart;
-            IProduct product = this.Repository.FindProductByName(productName);
+            Product product = this.Repository.FindProductByName(productName);
 
             shoppingCart.AddProduct(product);
 

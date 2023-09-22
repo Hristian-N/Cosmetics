@@ -1,6 +1,6 @@
 ﻿namespace Cosmetics.Models.Contracts
 {
-    public interface IToothpaste : IProduct
+    public interface IToothpaste
     {
         string Ingredients { get; }
     }

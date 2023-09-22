@@ -5,11 +5,11 @@ namespace Cosmetics.Models.Contracts
     public interface ICategory
     {
         string Name { get; }
-        ICollection<IProduct> Products { get; }
+        ICollection<Product> Products { get; }
 
-        void AddProduct(IProduct product);
+        void AddProduct(Product product);
 
-        void RemoveProduct(IProduct product);
+        void RemoveProduct(Product product);
 
         string Print();
     }

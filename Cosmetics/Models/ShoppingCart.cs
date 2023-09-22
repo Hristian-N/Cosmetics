@@ -9,24 +9,24 @@ namespace Cosmetics.Models
     {
         private const string ProductNotFoundErrorMessage = "Shopping cart does not contain product with name {0}!";
 
-        private readonly ICollection<IProduct> productList;
+        private readonly ICollection<Product> productList;
 
         public ShoppingCart()
         {
-            this.productList = new List<IProduct>();
+            this.productList = new List<Product>();
         }
 
-        public ICollection<IProduct> Products
+        public ICollection<Product> Products
         {
-            get { return new List<IProduct>(this.productList); }
+            get { return new List<Product>(this.productList); }
         }
 
-        public void AddProduct(IProduct product)
+        public void AddProduct(Product product)
         {
             this.productList.Add(product);
         }
 
-        public void RemoveProduct(IProduct product)
+        public void RemoveProduct(Product product)
         {
             if (!ContainsProduct(product))
             {
@@ -35,7 +35,7 @@ namespace Cosmetics.Models
             this.productList.Remove(product);
         }
 
-        public bool ContainsProduct(IProduct product)
+        public bool ContainsProduct(Product product)
         {
             return this.productList.Any(x => x.Name == product.Name);
         }

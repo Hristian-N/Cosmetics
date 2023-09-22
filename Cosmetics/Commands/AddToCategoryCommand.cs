@@ -27,7 +27,7 @@ namespace Cosmetics.Commands
         private string AddToCategory(string categoryName, string productName)
         {
             ICategory category = this.Repository.FindCategoryByName(categoryName);
-            IProduct product = this.Repository.FindProductByName(productName);
+            Product product = this.Repository.FindProductByName(productName);
 
             category.AddProduct(product);
 
