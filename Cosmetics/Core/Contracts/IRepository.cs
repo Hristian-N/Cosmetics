@@ -10,9 +10,9 @@ namespace Cosmetics.Core.Contracts
 
         IList<ICategory> Categories { get; }
 
-        IList<Product> Products { get; }
+        IList<IProduct> Products { get; }
 
-        Product FindProductByName(string productName);
+        IProduct FindProductByName(string productName);
 
         ICategory FindCategoryByName(string categoryName);
 

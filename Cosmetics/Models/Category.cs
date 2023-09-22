@@ -14,12 +14,12 @@ namespace Cosmetics.Models
         private const string ProductNotFoundErrorMessage = "Product not found in category.";
 
         private string name;
-        private readonly ICollection<Product> products;
+        private readonly ICollection<IProduct> products;
 
         public Category(string name)
         {
             this.Name = name;
-            this.products = new List<Product>();
+            this.products = new List<IProduct>();
         }
         public string Name
         {
@@ -34,20 +34,20 @@ namespace Cosmetics.Models
             }
         }
 
-        public ICollection<Product> Products
+        public ICollection<IProduct> Products
         {
             get
             {
-                return new List<Product>(this.products);
+                return new List<IProduct>(this.products);
             }
         }
 
-        public void AddProduct(Product product)
+        public void AddProduct(IProduct product)
         {
             this.products.Add(product);
         }
 
-        public void RemoveProduct(Product product)
+        public void RemoveProduct(IProduct product)
         {
             var productFound = this.products.FirstOrDefault(x => x.Name == product.Name);
 

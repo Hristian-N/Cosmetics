@@ -52,7 +52,7 @@ namespace Cosmetics.Tests.Helpers
             return repository.FindCategoryByName(CategoryData.ValidName);
         }
 
-        public static Product AddInitializedProductToRepo(IRepository repository)
+        public static IProduct AddInitializedProductToRepo(IRepository repository)
         {
             repository.CreateShampoo(
                 ShampooData.ValidName,

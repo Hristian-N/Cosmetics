@@ -5,7 +5,7 @@ using Cosmetics.Models.Enums;
 
 namespace Cosmetics.Models.Contracts
 {
-    public abstract class Product
+    public abstract class Product : IProduct
     {
 
         protected int NameMinLength = 3;

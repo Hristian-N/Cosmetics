@@ -39,7 +39,7 @@ namespace Cosmetics.Tests.Models
         {
             // Arrange
             ICategory category = TestHelpers.InitializeCategory();
-            IProduct productToAdd = TestHelpers.InitializeTestProduct();
+            Product productToAdd = TestHelpers.InitializeTestProduct();
 
             // Act
             category.AddProduct(productToAdd);
@@ -53,7 +53,7 @@ namespace Cosmetics.Tests.Models
         {
             // Arrange
             ICategory category = TestHelpers.InitializeCategory();
-            IProduct product = TestHelpers.InitializeTestProduct();
+            Product product = TestHelpers.InitializeTestProduct();
 
             // Act, Assert
             Assert.ThrowsException<ArgumentException>(() => category.RemoveProduct(product));
@@ -64,7 +64,7 @@ namespace Cosmetics.Tests.Models
         {
             // Arrange
             ICategory category = TestHelpers.InitializeCategory();
-            IProduct product = TestHelpers.InitializeTestProduct();
+            Product product = TestHelpers.InitializeTestProduct();
             category.AddProduct(product);
 
             // Act

@@ -4,13 +4,13 @@ namespace Cosmetics.Models.Contracts
 {
     public interface IShoppingCart
     {
-        ICollection<Product> Products { get; }
+        ICollection<IProduct> Products { get; }
 
-        void AddProduct(Product product);
+        void AddProduct(IProduct product);
 
-        void RemoveProduct(Product product);
+        void RemoveProduct(IProduct product);
 
-        bool ContainsProduct(Product product);
+        bool ContainsProduct(IProduct product);
 
         decimal TotalPrice();
     }

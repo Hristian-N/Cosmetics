@@ -9,13 +9,13 @@ namespace Cosmetics.Core
 {
     public class Repository : IRepository
     {
-        private readonly List<Product> products;
+        private readonly List<IProduct> products;
         private readonly List<ICategory> categories;
         private readonly IShoppingCart shoppingCart;
 
         public Repository()
         {
-            this.products = new List<Product>();
+            this.products = new List<IProduct>();
             this.categories = new List<ICategory>();
 
             this.shoppingCart = new ShoppingCart();
@@ -37,11 +37,11 @@ namespace Cosmetics.Core
             }
         }
 
-        public IList<Product> Products
+        public IList<IProduct> Products
         {
             get
             {
-                return new List<Product>(this.products);
+                return new List<IProduct>(this.products);
             }
         }
 
@@ -53,15 +53,15 @@ namespace Cosmetics.Core
 
         public IShampoo CreateShampoo(string name, string brand, decimal price, GenderType genderType, int millilitres, UsageType usageType)
         {
-            Shampoo shampoo = new Shampoo(name, brand, price, genderType, millilitres, usageType);
-            this.products.Add(shampoo);
+            IShampoo shampoo = new Shampoo(name, brand, price, genderType, millilitres, usageType);
+            //this.products.Add(shampoo);
             return shampoo;
         }
 
         public IToothpaste CreateToothpaste(string name, string brand, decimal price, GenderType genderType, string ingredients)
         {
-            Toothpaste toothpaste = new Toothpaste(name, brand, price, genderType, ingredients);
-            this.products.Add(toothpaste);
+            IToothpaste toothpaste = new Toothpaste(name, brand, price, genderType, ingredients);
+            //this.products.Add(toothpaste);
             return toothpaste;
         }
 
@@ -78,9 +78,9 @@ namespace Cosmetics.Core
             throw new ArgumentException($"Category {categoryName} does not exist!");
         }
 
-        public Product FindProductByName(string productName)
+        public IProduct FindProductByName(string productName)
         {
-            foreach (Product product in products)
+            foreach (IProduct product in products)
             {
                 if (product.Name == productName)
                     return product;
@@ -109,7 +109,7 @@ namespace Cosmetics.Core
         {
             bool exists = false;
 
-            foreach (Product product in products)
+            foreach (IProduct product in products)
             {
                 if (product.Name == productName)
                 {
