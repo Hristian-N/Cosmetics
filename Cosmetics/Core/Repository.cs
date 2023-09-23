@@ -65,6 +65,13 @@ namespace Cosmetics.Core
             return toothpaste;
         }
 
+        public ICream CreateCream(string name, string brand, decimal price, GenderType gender, ScentType scent)
+        {
+            ICream cream = new Cream(name, brand, price, gender, scent);
+            this.products.Add(cream);
+            return cream;
+        }
+
         public ICategory FindCategoryByName(string categoryName)
         {
             foreach (ICategory category in categories)

@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Cosmetics.Models.Enums
 {
-    public enum Scent
+    public enum ScentType
     {
         Lavender,
         Vanilla,

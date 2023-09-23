@@ -2,9 +2,9 @@
 using System;
 namespace Cosmetics.Models.Contracts
 {
-    public interface ICream
+    public interface ICream : IProduct
     {
-        Scent Scent { get; }
+        ScentType Scent { get; }
     }
 }
 

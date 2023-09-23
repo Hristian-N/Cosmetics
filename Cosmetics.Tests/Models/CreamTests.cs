@@ -1,4 +1,4 @@
-﻿/*
+﻿
 using Cosmetics.Models;
 using Cosmetics.Models.Enums;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -61,4 +61,3 @@ namespace Cosmetics.Tests.Models
 		}
 	}
 }
-*/

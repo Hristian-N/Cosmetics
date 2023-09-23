@@ -7,7 +7,8 @@
         CreateCategory,
         CreateShampoo,
         CreateToothpaste,
-		RemoveFromCategory,
+        CreateCream,
+        RemoveFromCategory,
         RemoveFromShoppingCart,
         ShowCategory,
         TotalPrice
