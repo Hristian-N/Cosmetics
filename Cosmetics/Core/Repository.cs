@@ -55,6 +55,7 @@ namespace Cosmetics.Core
         {
             IShampoo shampoo = new Shampoo(name, brand, price, genderType, millilitres, usageType);
             //this.products.Add(shampoo);
+            //
             return shampoo;
         }
 
