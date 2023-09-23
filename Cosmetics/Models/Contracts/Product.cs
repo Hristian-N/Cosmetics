@@ -2,6 +2,7 @@
 using System;
 using System.Xml.Linq;
 using Cosmetics.Models.Enums;
+using System.Text;
 
 namespace Cosmetics.Models.Contracts
 {
@@ -72,6 +73,15 @@ namespace Cosmetics.Models.Contracts
             }
         }
 
-        public abstract string Print();
+        public virtual string Print()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+
+            stringBuilder.AppendLine($"#{Name} {Brand}");
+            stringBuilder.AppendLine($" #Price: {Price}");
+            stringBuilder.Append($" #Gender: {Gender}");
+
+            return stringBuilder.ToString();
+        }
     }
 }

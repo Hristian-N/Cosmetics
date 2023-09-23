@@ -54,15 +54,14 @@ namespace Cosmetics.Core
         public IShampoo CreateShampoo(string name, string brand, decimal price, GenderType genderType, int millilitres, UsageType usageType)
         {
             IShampoo shampoo = new Shampoo(name, brand, price, genderType, millilitres, usageType);
-            //this.products.Add(shampoo);
-            //
+            this.products.Add(shampoo);
             return shampoo;
         }
 
         public IToothpaste CreateToothpaste(string name, string brand, decimal price, GenderType genderType, string ingredients)
         {
             IToothpaste toothpaste = new Toothpaste(name, brand, price, genderType, ingredients);
-            //this.products.Add(toothpaste);
+            this.products.Add(toothpaste);
             return toothpaste;
         }
 
@@ -84,10 +83,11 @@ namespace Cosmetics.Core
             foreach (IProduct product in products)
             {
                 if (product.Name == productName)
+                {
                     return product;
+                }
             }
-
-            throw new ArgumentException("No ");
+            throw new ArgumentException($"Proudtc {productName} does not exist!");
         }
 
         public bool CategoryExists(string categoryName)

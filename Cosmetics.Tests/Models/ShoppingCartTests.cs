@@ -29,7 +29,7 @@ namespace Cosmetics.Tests.Models
         public void GetProducts_Should_ReturnCopyOfTheCollection()
         {
             // Arrange
-            Product productToAdd = TestHelpers.InitializeTestProduct();
+            IProduct productToAdd = TestHelpers.InitializeTestProduct();
 
             // Act
             cart.Products.Add(productToAdd);
@@ -42,7 +42,7 @@ namespace Cosmetics.Tests.Models
         public void AddProduct_Should_AddProductToList()
         {
             // Arrange, Act
-            Product productToAdd = TestHelpers.InitializeTestProduct();
+            IProduct productToAdd = TestHelpers.InitializeTestProduct();
             cart.AddProduct(productToAdd);
 
             // Assert
@@ -53,7 +53,7 @@ namespace Cosmetics.Tests.Models
         public void RemoveProduct_Should_ThrowException_When_ProductNotInCart()
         {
             // Arrange
-            Product product = TestHelpers.InitializeTestProduct();
+            IProduct product = TestHelpers.InitializeTestProduct();
 
             // Act, Assert
             Assert.ThrowsException<ArgumentException>(() => cart.RemoveProduct(product));
@@ -63,7 +63,7 @@ namespace Cosmetics.Tests.Models
         public void RemoveProduct_Should_RemoveProductFromList()
         {
             // Arrange
-            Product product = TestHelpers.InitializeTestProduct();
+            IProduct product = TestHelpers.InitializeTestProduct();
             cart.AddProduct(product);
 
             // Act
@@ -77,7 +77,7 @@ namespace Cosmetics.Tests.Models
         public void ContainsProduct_Should_ReturnTrue_When_ProductFound()
         {
             // Arrange
-            Product product = TestHelpers.InitializeTestProduct();
+            IProduct product = TestHelpers.InitializeTestProduct();
             cart.AddProduct(product);
 
             // Act
@@ -91,7 +91,7 @@ namespace Cosmetics.Tests.Models
         public void ContainsProduct_Should_ReturnFalse_When_ProductNotFound()
         {
             // Arrange
-            Product product = TestHelpers.InitializeTestProduct();
+            IProduct product = TestHelpers.InitializeTestProduct();
 
             // Act
             bool isFound = cart.ContainsProduct(product);

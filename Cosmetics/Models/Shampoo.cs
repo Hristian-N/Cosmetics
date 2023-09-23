@@ -2,7 +2,10 @@
 using Cosmetics.Models.Contracts;
 using Cosmetics.Models.Enums;
 using System;
+using System.Diagnostics;
+using System.Reflection;
 using System.Text;
+using System.Xml.Linq;
 
 namespace Cosmetics.Models
 {
@@ -53,11 +56,9 @@ namespace Cosmetics.Models
         {
             StringBuilder stringBuilder = new StringBuilder();
 
-            stringBuilder.AppendLine($"#{Name} {Brand}");
-            stringBuilder.AppendLine($"# Price: {Price}");
-            stringBuilder.AppendLine($"# Gender: {Gender}");
-            stringBuilder.AppendLine($"# Milliliters: {Millilitres}");
-            stringBuilder.AppendLine($"# Usage: {Usage}");
+            stringBuilder.AppendLine(base.Print());
+            stringBuilder.AppendLine($" #Milliliters: {Millilitres}");
+            stringBuilder.AppendLine($" #Usage: {Usage}");
             stringBuilder.AppendLine("===");
 
             return stringBuilder.ToString();

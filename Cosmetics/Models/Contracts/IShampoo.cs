@@ -2,7 +2,7 @@
 
 namespace Cosmetics.Models.Contracts
 {
-    public interface IShampoo
+    public interface IShampoo : IProduct
     {
         int Millilitres { get; }
 

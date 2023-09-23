@@ -43,10 +43,8 @@ namespace Cosmetics.Models
         {
             StringBuilder stringBuilder = new StringBuilder();
 
-            stringBuilder.AppendLine($"#{Name} {Brand}");
-            stringBuilder.AppendLine($"# Price: {Price}");
-            stringBuilder.AppendLine($"# Gender: {Gender}");
-            stringBuilder.AppendLine($"# # Ingredients: {Ingredients}");
+            stringBuilder.AppendLine(base.Print());
+            stringBuilder.AppendLine($" #Ingredients: {Ingredients}");
             stringBuilder.AppendLine("===");
 
             return stringBuilder.ToString();
